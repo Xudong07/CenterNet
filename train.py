@@ -173,8 +173,11 @@ def train(training_dbs, validation_db, start_iter=0):
         validation_task.terminate()
 
 if __name__ == "__main__":
-    args = parse_args()
 
+    #parse the command line
+    args = parse_args()
+    # return cfg_file name for configurate the model and training
+    # many import parameters in system_configs
     cfg_file = os.path.join(system_configs.config_dir, args.cfg_file + ".json")
     with open(cfg_file, "r") as f:
         configs = json.load(f)

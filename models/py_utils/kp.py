@@ -281,7 +281,7 @@ class kp(nn.Module):
                 inter = self.inters_[ind](inter) + self.cnvs_[ind](cnv)
                 inter = self.relu(inter)
                 inter = self.inters[ind](inter)
-                
+        print('dddddddddddddd')
         return self._decode(*outs[-8:], **kwargs)
 
     def forward(self, *xs, **kwargs):

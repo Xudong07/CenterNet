@@ -127,6 +127,7 @@ def kp_detection(db, nnet, result_dir, debug=False, decode_func=kp_decode):
             images = np.concatenate((images, images[:, :, :, ::-1]), axis=0)
             images = torch.from_numpy(images)
             dets, center = decode_func(nnet, images, K, ae_threshold=ae_threshold, kernel=nms_kernel)
+
             dets   = dets.reshape(2, -1, 8)
             center = center.reshape(2, -1, 4)
             dets[1, :, [0, 2]] = out_width - dets[1, :, [2, 0]]
