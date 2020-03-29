@@ -92,6 +92,7 @@ def kp_detection(db, k_ind, data_aug, debug):
         image      = cv2.imread(image_file)
 
         # reading detections
+        # detections is boxes + class
         detections = db.detections(db_ind)
 
         # cropping an image randomly
